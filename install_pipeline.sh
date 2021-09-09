@@ -15,6 +15,7 @@ kubectl apply -f eventlistener.yaml
 kubectl apply -f ingress.yaml
 kubectl apply -f triggertemplate.yaml
 kubectl apply -f triggerbinding.yaml
+kubectl apply -f tekton-ambassador.yaml
 
 #kubectl apply -f build-docker-image-from-git-source-task-run.yaml
 #tkn taskrun logs build-docker-image-from-git-source-task-run
