@@ -1,8 +1,7 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: el-github-pr
-  namespace: tekton-pipelines
+  name: el-github-pr-mapping
 spec:
-  prefix: /hooks
+  prefix: /hooks/
   service: el-github-pr:8080
