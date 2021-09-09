@@ -5,5 +5,4 @@ metadata:
   namespace: tekton-pipelines
 spec:
   prefix: /hooks
-  rewrite: /hooks
   service: el-github-pr:8080
