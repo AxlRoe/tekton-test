@@ -5,6 +5,8 @@ metadata:
 spec:
   params:
     - name: gitrepositoryurl
-      value: $(body.repository.clone_url)
+      value: https://github.com/AxlRoe/app-test
     - name: gitrevision
-      value: $(body.pull_request.head.sha)
+      value: main
+    - name: dockerimageurl
+      value: europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test
