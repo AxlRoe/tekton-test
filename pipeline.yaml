@@ -4,29 +4,13 @@ metadata:
   name: github-pr-pipeline
 spec:
   resources:
-    - name: docker-source
+    - name: source
       type: git
-    - name: builtImage
-      type: image
   tasks:
     - name: build-docker-image-from-git-source
       taskRef:
         name: build-docker-image-from-git-source
-      params:
-        - name: pathToDockerFile
-          type: string
-          description: The path to the dockerfile to build
-          default: $(resources.inputs.docker-source.path)/Dockerfile
-        - name: pathToContext
-          type: string
-          description: |
-            The build context used by Kaniko
-            (https://github.com/GoogleContainerTools/kaniko#kaniko-build-contexts)
-          default: $(resources.inputs.docker-source.path)
       resources:
         inputs:
-          - name: docker-source
-            type: git
-        outputs:
-          - name: builtImage
-            type: image
+          - name: source
+            resource: source
