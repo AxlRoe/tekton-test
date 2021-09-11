@@ -4,7 +4,7 @@ metadata:
   name: github-pr-pipeline
 spec:
   resources:
-    - name: git-source
+    - name: skaffold-git
       type: git
     - name: docker-image
       type: image
@@ -14,8 +14,8 @@ spec:
         name: build-docker-image-from-git-source
       resources:
         inputs:
-          - name: git-source
-            resource: git-source
+          - name: skaffold-git
+            resource: skaffold-git
         outputs:
           - name: docker-image
             resource: docker-image
