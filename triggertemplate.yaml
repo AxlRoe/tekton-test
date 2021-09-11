@@ -37,7 +37,7 @@ spec:
         pipelineRef:
           name: github-pr-pipeline
         resources:
-        - name: git-source
+        - name: source
           resourceRef: git-source
-        - name: docker-image
+        - name: image
           resourceRef: docker-image
