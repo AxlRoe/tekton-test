@@ -12,6 +12,7 @@ spec:
       kind: PipelineResource
       metadata:
         name: git-source
+        namespace: tekton-argocd-example
       spec:
         type: git
         params:
@@ -23,6 +24,7 @@ spec:
       kind: PipelineResource
       metadata:
         name: docker-image
+        namespace: tekton-argocd-example
       spec:
         type: image
         params:
@@ -32,6 +34,7 @@ spec:
       kind: PipelineRun
       metadata:
         generateName: github-pr-pipeline-run-
+        namespace: tekton-argocd-example
       spec:
         serviceAccountName: pipeline-sa
         pipelineRef:

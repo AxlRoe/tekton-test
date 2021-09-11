@@ -29,6 +29,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: pipeline-sa
+    namespace: tekton-argocd-example
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -73,6 +74,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: tekton-triggers-admin
+    namespace: tekton-argocd-example
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
