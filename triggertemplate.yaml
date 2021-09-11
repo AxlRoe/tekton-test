@@ -22,7 +22,7 @@ spec:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineResource
       metadata:
-        name: docker-image
+        name: pippo-image
       spec:
         type: image
         params:
@@ -40,4 +40,4 @@ spec:
         - name: source
           resourceRef: skaffold-git
         - name: image
-          resourceRef: docker-image
+          resourceRef: pippo-image
