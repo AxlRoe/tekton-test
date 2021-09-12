@@ -9,26 +9,6 @@ spec:
     - name: dockerimageurl
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
-      kind: PipelineResource
-      metadata:
-        name: git-source
-      spec:
-        type: git
-        params:
-          - name: revision
-            value: $(tt.params.gitrevision)
-          - name: url
-            value: $(tt.params.gitrepositoryurl) #configure: change if you want to build something else, perhaps from your own local git repository.
-    - apiVersion: tekton.dev/v1alpha1
-      kind: PipelineResource
-      metadata:
-        name: docker-image
-      spec:
-        type: image
-        params:
-          - name: url
-            value: $(tt.params.dockerimageurl) #configure: replace with where the image should go: perhaps your local registry or Dockerhub with a secret and configured service account
-    - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
       metadata:
         generateName: github-pr-pipeline-run-
