@@ -20,7 +20,7 @@ spec:
             name: "cel"
           params:
             - name: "filter"
-              value: "body.action in ['opened', 'synchronize', 'reopened']"
+              value: "body.action in ['opened']"
       bindings:
         - ref: github-pr-binding
       template:
