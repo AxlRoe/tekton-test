@@ -35,7 +35,7 @@ spec:
           name: kaniko-secret
       args:
         - --dockerfile=$(params.pathToDockerFile)
-        - --destination=$(resources.outputs.builtImage.url)
+        - --destination=$(resources.outputs.docker-image.url)
         - --context=$(params.pathToContext)
         - --build-arg=BASE=alpine:3
   volumes:
