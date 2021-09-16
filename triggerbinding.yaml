@@ -8,3 +8,5 @@ spec:
       value: $(body.repository.clone_url)
     - name: gitrevision
       value: $(body.pull_request.head.sha)
+    - name: dockerimageurl
+      value: europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test

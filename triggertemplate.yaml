@@ -15,10 +15,11 @@ spec:
       metadata:
         generateName: github-pr-pipeline-run-
       spec:
+        serviceAccountName: tekton-triggers-example-sa
         pipelineRef:
           name: github-pr-pipeline
         resources:
-          - name: source
+          - name: git-source
             resourceSpec:
               type: git
               params:
@@ -26,3 +27,10 @@ spec:
                   value: $(tt.params.gitrevision)
                 - name: url
                   value: $(tt.params.gitrepositoryurl)
+	  - name: docker-image
+            resourceSpec:
+              type: image
+              params:
+                - name: dockerimageurl
+                  value: $(tt.params.dockerimageurl)
+	  
