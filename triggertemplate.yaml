@@ -3,9 +3,10 @@ kind: TriggerTemplate
 metadata:
   name: github-pr-pipeline-template
 spec:
-  - name: gitrevision
-  - name: gitrepositoryurl
-  - name: dockerimageurl
+  params:
+   - name: gitrevision
+   - name: gitrepositoryurl
+   - name: dockerimageurl
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
