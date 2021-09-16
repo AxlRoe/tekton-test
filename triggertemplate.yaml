@@ -3,13 +3,6 @@ kind: TriggerTemplate
 metadata:
   name: github-pr-pipeline-template
 spec:
-  params:
-    - name: gitrevision
-      default: main
-    - name: gitrepositoryurl
-      default: https://github.com/AxlRoe/app-test
-    - name: dockerimageurl
-      default: europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -25,12 +18,12 @@ spec:
               type: git
               params:
                 - name: revision
-                  value: $(tt.params.gitrevision)
+                  value: main
                 - name: url
-                  value: $(tt.params.gitrepositoryurl)
+                  value: https://github.com/AxlRoe/app-test
           - name: docker-image
             resourceSpec:
               type: image
               params:
                 - name: dockerimageurl
-                  value: $(tt.params.dockerimageurl)
+                  value: europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test
