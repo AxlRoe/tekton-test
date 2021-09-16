@@ -27,7 +27,7 @@ spec:
                   value: $(tt.params.gitrevision)
                 - name: url
                   value: $(tt.params.gitrepositoryurl)
-	      - name: docker-image
+          - name: docker-image
             resourceSpec:
               type: image
               params:
