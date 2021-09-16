@@ -4,8 +4,10 @@ metadata:
   name: github-pr-pipeline
 spec:
   resources:
-    - name: source
+    - name: git-source
       type: git
+    - name: docker-image
+      type: image
   tasks:
     - name: build-docker-image-from-git-source
       taskRef:
