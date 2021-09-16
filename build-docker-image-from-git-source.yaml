@@ -35,7 +35,7 @@ spec:
           name: kaniko-secret
       args:
         - --dockerfile=$(params.pathToDockerFile)
-        - --destination=$(resources.outputs.docker-image.url)
+        - --destination=europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test
         - --context=$(params.pathToContext)
         - --build-arg=BASE=alpine:3
   volumes:
