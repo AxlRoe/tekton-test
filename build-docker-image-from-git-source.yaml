@@ -7,19 +7,19 @@ spec:
     - name: pathToDockerFile
       type: string
       description: The path to the dockerfile to build
-      default: $(resources.inputs.docker-source.path)/Dockerfile
+      default: $(resources.inputs.git-source.path)/Dockerfile
     - name: pathToContext
       type: string
       description: |
         The build context used by Kaniko
         (https://github.com/GoogleContainerTools/kaniko#kaniko-build-contexts)
-      default: $(resources.inputs.docker-source.path)
+      default: $(resources.inputs.git-source.path)
   resources:
     inputs:
-      - name: docker-source
+      - name: git-source
         type: git
     outputs:
-      - name: builtImage
+      - name: docker-image
         type: image
   steps:
     - name: build-and-push
