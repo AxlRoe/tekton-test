@@ -33,4 +33,3 @@ spec:
               params:
                 - name: dockerimageurl
                   value: $(tt.params.dockerimageurl)
-	  
