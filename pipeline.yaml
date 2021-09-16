@@ -14,5 +14,8 @@ spec:
         name: build-docker-image-from-git-source
       resources:
         inputs:
-          - name: source
-            resource: source
+          - name: git-source
+            resource: git-source
+        outputs:
+          - name: docker-image
+            resource: docker-image
