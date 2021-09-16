@@ -25,5 +25,5 @@ spec:
             resourceSpec:
               type: image
               params:
-                - name: dockerimageurl
+                - name: url
                   value: europe-west2-docker.pkg.dev/tekton-test-321920/tekton-test-repo/app-test
