@@ -6,10 +6,12 @@
 #kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
 
 
-kubectl apply -f skaffold-git.yaml
-kubectl apply -f skaffold-image-leeroy-web.yaml
+#kubectl apply -f skaffold-git.yaml
+#kubectl apply -f skaffold-image-leeroy-web.yaml
 kubectl apply -f build-docker-image-from-git-source.yaml
-
+kubectl apply -f argocd-task-cm.yaml
+kubectl apply -f argocd-task.yaml
+kubectl apply -f argocd-secret.yaml
 kubectl apply -f rbac.yaml
 kubectl apply -f tekton-ambassador.yaml
 kubectl apply -f secret.yaml
