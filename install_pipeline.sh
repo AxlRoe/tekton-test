@@ -5,6 +5,7 @@
 #kubectl apply -f https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml
 #kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
 
+#kubectl create configmap config-artifact-pvc --from-literal=size=15Gi --from-literal=storageClassName=standard -o yaml -n tekton-pipelines --dry-run=client | kubectl replace -f -
 
 #kubectl apply -f skaffold-git.yaml
 #kubectl apply -f skaffold-image-leeroy-web.yaml
