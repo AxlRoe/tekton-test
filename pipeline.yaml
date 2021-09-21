@@ -19,3 +19,11 @@ spec:
         outputs:
           - name: docker-image
             resource: docker-image
+    - name: sync-application
+      taskRef:
+        name: argocd-task-sync-and-wait
+      runAfter:
+        - build-docker-image-from-git-source
+      params:
+        - name: flags
+          value: --insecure
